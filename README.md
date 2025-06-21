@@ -31,6 +31,17 @@ sudo apt install tesseract-ocr  # or install via Windows installer
 ```bash
 pip install python-doctr[torch]
 ```
+
+# Sleep Session Result
+
+### Windows
+```bash
+$IMGS = "D:\Personal\Jogos\PKMN_Sleep\Sample5\images"
+$OUTPUT = "D:\Personal\Jogos\PKMN_Sleep\Sample5\session_result.csv"
+python read_sleep_result_doc_tr.py --output $OUTPUT $IMGS
+```
+echo python read_sleep_result_doc_tr.py --output $OUTPUT $IMGS
+
 # 🕹️ Next Steps
 Here’s where we stopped and what you can do next:
 
@@ -43,3 +54,32 @@ Here’s where we stopped and what you can do next:
  🧠 (Optional) Improve OCR robustness for layout variations
 
  🖼️ (Optional) Visualize OCR detection boxes for debugging
+
+ ### Connecting to Github:
+
+git remote add origin https://github.com/ludygrv/pokemon-sleep-parser.git
+with SSH
+git remote add origin git@github.com:ludygrv/pokemon-sleep-parser.git
+
+Change User:
+git config user.name "Ludy17L"
+git config user.email "ludy17ludy@gmail.com"
+
+Failure to use "New" fine grained Token please try again with a classic one.
+
+If necessary reset credential manager:
+
+Steps to Manually Remove GitHub Credentials
+Open Windows Credential Manager:
+
+Press Win + S and type Credential Manager, then open it.
+Go to "Windows Credentials" or "Generic Credentials":
+
+Look for any entries related to github.com.
+Remove GitHub Credentials:
+
+Click on the entry (it may be called git:https://github.com or similar).
+Click Remove.
+Restart VS Code or your terminal.
+
+Try pushing again:
