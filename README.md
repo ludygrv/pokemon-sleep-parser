@@ -37,11 +37,24 @@ pip install python-doctr[torch]
 ### Windows
 ```bash
 $IMGS = "D:\Personal\Jogos\PKMN_Sleep\Sample5\images"
-$OUTPUT = "D:\Personal\Jogos\PKMN_Sleep\Sample5\session_result.csv"
-python read_sleep_result_doc_tr.py --output $OUTPUT $IMGS
+$OUTPUT = "D:\Personal\Jogos\PKMN_Sleep\Sample5\OCR_extract"
+python read_sleep_result_doc_tr.py $IMGS $OUTPUT 
 ```
 echo python read_sleep_result_doc_tr.py --output $OUTPUT $IMGS
 
+### Debug Evidence
+Finally have a code that works for 2 image types and expands previous runs!
+
+```bash
+PS D:\Personal\Jogos\PKMN_Sleep\PKMN_Sleep_Code> python read_sleep_result_doc_tr.py $IMGS $OUTPUT 
+Found 5 images. 4 already processed, 1 to process.
+Skipping D:\Personal\Jogos\PKMN_Sleep\Sample5\images\Screenshot_2025-05-05-06-49-59-085_jp.pokemon.pokemonsleep.jpg: Unknown Image
+Extraction complete. Results saved to D:\Personal\Jogos\PKMN_Sleep\Sample5\OCR_extract
+PS D:\Personal\Jogos\PKMN_Sleep\PKMN_Sleep_Code> python read_sleep_result_doc_tr.py $IMGS $OUTPUT 
+Found 5 images. 5 already processed, 0 to process.
+Extraction complete. Results saved to D:\Personal\Jogos\PKMN_Sleep\Sample5\OCR_extract
+PS D:\Personal\Jogos\PKMN_Sleep\PKMN_Sleep_Code> 
+```
 # 🕹️ Next Steps
 Here’s where we stopped and what you can do next:
 
