@@ -42,6 +42,13 @@ python read_sleep_result_doc_tr.py $IMGS $OUTPUT
 ```
 echo python read_sleep_result_doc_tr.py --output $OUTPUT $IMGS
 
+### Plot the graph
+```bash
+$DATA = "D:\Personal\Jogos\PKMN_Sleep\Sample5\OCR_extract"
+python plot_drowsy_power.py $DATA
+```
+
+
 ### Debug Evidence
 Finally have a code that works for 2 image types and expands previous runs!
 

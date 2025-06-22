@@ -94,7 +94,7 @@ def main():
     image_files = get_image_files(args.folder)
 
     # Create output directory if it doesn't exist
-    output_dir = os.path.dirname(args.output) or "."
+    output_dir = args.output
     os.makedirs(output_dir, exist_ok=True)
     report_csv = os.path.join(output_dir, "report_info.csv")
     session_csv = os.path.join(output_dir, "session_info.csv")
