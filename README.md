@@ -65,15 +65,15 @@ PS D:\Personal\Jogos\PKMN_Sleep\PKMN_Sleep_Code>
 # 🕹️ Next Steps
 Here’s where we stopped and what you can do next:
 
- ✅ Confirm doctr OCR results on more screenshots
-
- 📁 Add batch processing: load all screenshots from a folder
-
- 📊 Save output to CSV or Excel
-
- 🧠 (Optional) Improve OCR robustness for layout variations
-
- 🖼️ (Optional) Visualize OCR detection boxes for debugging
+Issues:
+1 - OCR seesm to be wrong in some instances
+2 - "date" on report and on session are off-by-one
+3 - Verify Graph is logical
+4 - Include Current Rank Info
+5 - Adjust the effect of Multipliers (Research Exp Bonus or Events)
+6 - Plot Newfound pokemon Lvl x Rank
+🖼️ (Optional) Visualize OCR detection boxes for debugging
+N - Auto Retrieve new images from Photos?
 
  ### Connecting to Github:
 

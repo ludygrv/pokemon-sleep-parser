@@ -15,8 +15,8 @@ session_csv = os.path.join(args.folder, 'session_info.csv')
 report_df = pd.read_csv(report_csv)
 session_df = pd.read_csv(session_csv)
 
-# Standardize dates in report (YYYY-MM-DD)
-report_df['date_std'] = pd.to_datetime(report_df['date'], format='%Y-%m-%d')
+# Standardize dates in report (YYYY-MM-DD) Report always comes on the next day!
+report_df['date_std'] = pd.to_datetime(report_df['date'], format='%Y-%m-%d') - pd.Timedelta(days=1)
 
 # Standardize dates in session (e.g., Monday, May 5, 2025)
 def parse_session_date(date_str):
@@ -40,7 +40,31 @@ print(merged_df.head())
 
 # Plot Research Experience vs Drowsy Power
 plt.figure(figsize=(10, 6))
-plt.plot(merged_df['drowsy_power'], merged_df['research_exp'], marker='o', label='Research Experience vs Drowsy Power')
+# Plot Research Experience vs Drowsy Power, coloring by day of week
+days = merged_df['date_std'].dt.day_name()
+unique_days = days.unique()
+colors = plt.cm.get_cmap('tab10', len(unique_days))
+
+for idx, day in enumerate(unique_days):
+    mask = days == day
+    plt.scatter(
+        merged_df.loc[mask, 'drowsy_power'],
+        merged_df.loc[mask, 'research_exp'],
+        label=f'Research Exp ({day})',
+        color=colors(idx),
+        marker='o'
+    )
+
+# Optionally, add day-of-week as text labels for each point
+for i, row in merged_df.iterrows():
+    plt.text(
+        row['drowsy_power'],
+        row['research_exp'],
+        row['date_std'].strftime('%a'),
+        fontsize=8,
+        ha='right',
+        va='bottom'
+    )
 
 # Plot Dream Shards vs Drowsy Power
 plt.plot(merged_df['drowsy_power'], merged_df['dream_shards'], marker='s', label='Dream Shards vs Drowsy Power')
