@@ -38,9 +38,8 @@ pip install python-doctr[torch]
 ```bash
 $IMGS = "D:\Personal\Jogos\PKMN_Sleep\Sample5\images"
 $OUTPUT = "D:\Personal\Jogos\PKMN_Sleep\Sample5\OCR_extract"
-python read_sleep_result_doc_tr.py $IMGS $OUTPUT 
+python .\read_report_session_info.py $IMGS $OUTPUT 
 ```
-echo python read_sleep_result_doc_tr.py --output $OUTPUT $IMGS
 
 ### Plot the graph
 ```bash

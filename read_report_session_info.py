@@ -105,7 +105,6 @@ def main():
     for csv_file, image_key in [(report_csv, "report_image"),
                                 (session_csv, "session_image"),
                                 (unknown_csv, "unknown_image")]:
-        
         if os.path.exists(csv_file):
             with open(csv_file, newline='', encoding="utf-8") as f:
                 reader = csv.DictReader(f)
@@ -146,7 +145,6 @@ def main():
             continue
         else:
             print(f"Warning! Image with invalid image_type ({info['image_type']}) Status={info['status']}")
-
 
     # Save report results
     report_exists = os.path.exists(report_csv)
